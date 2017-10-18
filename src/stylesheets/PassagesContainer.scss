@@ -1,0 +1,16 @@
+.passages-container {
+  table {
+    border-collapse: collapse;
+  }
+  thead tr {
+    color: white;
+    background-color: black;
+    border: none;
+  }
+  tbody tr:nth-child(odd) {
+    background-color: transparent;
+  }
+  tbody tr:nth-child(even) {
+    background-color: grey;
+  }
+}

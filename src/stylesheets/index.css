@@ -1,0 +1,23 @@
+.newPassageButton {
+  background: darkblue;
+  color: white;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 10px; }
+
+.passages-container table {
+  border-collapse: collapse; }
+
+.passages-container thead tr {
+  color: white;
+  background-color: black;
+  border: none; }
+
+.passages-container tbody tr:nth-child(odd) {
+  background-color: transparent; }
+
+.passages-container tbody tr:nth-child(even) {
+  background-color: grey; }
