@@ -3,11 +3,11 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import { SignUpContainer } from './containers/SignUpContainer';
 import { PassagesContainer } from './containers/PassagesContainer';
+import { LoginContainer } from './containers/LoginContainer';
 
 import { NavBar } from './components/NavBar';
 import { Menu } from './components/Menu';
 import { Home } from './components/Home';
-import { Login } from './components/Login';
 
 class App extends React.Component {
   constructor(props) {
@@ -53,7 +53,7 @@ class App extends React.Component {
           </ul>
           <Route exact path="/" component={Home}>
           </Route>
-          <Route path="/login" component={Login}>
+          <Route path="/login" component={LoginContainer}>
           </Route>
           <Route path="/signup" component={SignUpContainer}>
           </Route>

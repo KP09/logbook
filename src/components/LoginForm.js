@@ -1,6 +1,6 @@
 import React from 'react';
 
-export class SignUpForm extends React.Component {
+export class LoginForm extends React.Component {
   handleChange(event) {
     const newState = {[event.target.name]: event.target.value};
     this.props.onFormChange(newState);
@@ -14,28 +14,6 @@ export class SignUpForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit.bind(this)}>
-        <div>
-          <label>
-            First name: <input
-            type="text"
-            id="first_name"
-            name="firstName"
-            value={this.props.formValues.firstName}
-            onChange={(event) => this.handleChange(event)}
-            />
-          </label>
-        </div>
-        <div>
-          <label>
-            Last name: <input
-            type="text"
-            id="last_name"
-            name="lastName"
-            value={this.props.formValues.lastName}
-            onChange={(event) => this.handleChange(event)}
-            />
-          </label>
-        </div>
         <div>
           <label>
             Email: <input
@@ -56,16 +34,6 @@ export class SignUpForm extends React.Component {
             value={this.props.formValues.password}
             onChange={(event) => this.handleChange(event)}
             />
-          </label>
-        </div>
-        <div>
-          <label>
-            Confirm password: <input
-            type="password"
-            id="password_confirmation"
-            name="passwordConfirmation"
-            value={this.props.formValues.passwordConfirmation}
-            onChange={(event) => this.handleChange(event)}/>
           </label>
         </div>
         <div>

@@ -1,16 +1,13 @@
 import React from 'react';
 import axios from 'axios';
-import { SignUpForm } from '../components/SignUpForm';
+import { LoginForm } from '../components/LoginForm';
 
-export class SignUpContainer extends React.Component {
+export class LoginContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstName: '',
-      lastName: '',
       email: '',
-      password: '',
-      passwordConfirmation: ''
+      password: ''
     }
   }
 
@@ -20,13 +17,10 @@ export class SignUpContainer extends React.Component {
 
   onFormSubmit() {
     axios.post(
-      'http://localhost:3001/api/v1/users',
-      {"user": {
-        "first_name": this.state.firstName,
-        "last_name": this.state.lastName,
+      'http://localhost:3001/api/v1/users/login',
+      {
         "email": this.state.email,
         "password": this.state.password,
-        "password_confirmation": this.state.passwordConfirmation}
       }
     )
     .then(response => {
@@ -37,7 +31,7 @@ export class SignUpContainer extends React.Component {
 
   render() {
     return (
-      <SignUpForm
+      <LoginForm
         formValues={this.state}
         onFormChange={this.onFormChange.bind(this)}
         onFormSubmit={this.onFormSubmit.bind(this)}
