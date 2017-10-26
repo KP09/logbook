@@ -1,10 +1,15 @@
-import React, { Component } from 'react';
-import './stylesheets/index.css';
-import { NavBar } from './components/NavBar';
-import { Menu } from './components/Menu';
+import React from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
+import { SignUpContainer } from './containers/SignUpContainer';
 import { PassagesContainer } from './containers/PassagesContainer';
 
-class App extends Component {
+import { NavBar } from './components/NavBar';
+import { Menu } from './components/Menu';
+import { Home } from './components/Home';
+import { Login } from './components/Login';
+
+class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -34,11 +39,26 @@ class App extends Component {
 
   render() {
     return (
-      <div id="app">
-        { !this.state.menu && <NavBar changePage={this.changePage} toggleMenu={this.toggleMenu} /> }
-        { this.state.menu && <Menu toggleMenu={this.toggleMenu} />}
-        { this.state.currentPage === "passages"&& !this.state.menu && <PassagesContainer /> }
-      </div>
+      // <div id="app">
+      //   { !this.state.menu && <NavBar changePage={this.changePage} toggleMenu={this.toggleMenu} /> }
+      //   { this.state.menu && <Menu toggleMenu={this.toggleMenu} />}
+      //   { this.state.currentPage === "passages"&& !this.state.menu && <PassagesContainer /> }
+      // </div>
+      <Router>
+        <div>
+          <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/login">Login</Link></li>
+            <li><Link to="/signup">Signup</Link></li>
+          </ul>
+          <Route exact path="/" component={Home}>
+          </Route>
+          <Route path="/login" component={Login}>
+          </Route>
+          <Route path="/signup" component={SignUpContainer}>
+          </Route>
+        </div>
+      </Router>
     );
   }
 }
